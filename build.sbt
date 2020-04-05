@@ -7,5 +7,8 @@ scalaJSUseMainModuleInitializer := true
 enablePlugins(ScalaJSPlugin)
 
 libraryDependencies ++= Seq(
-    "com.lihaoyi" %% "cask" % "0.5.2"
+    "org.scala-js" %%% "scalajs-dom" % "1.0.0"
 )
+
+jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv()
+

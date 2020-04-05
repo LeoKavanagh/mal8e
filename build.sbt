@@ -1,6 +1,11 @@
-scalaVersion := "2.11.12"
+scalaVersion := "2.13.1"
 
-// Set to false or remove if you want to show stubs as linking errors
-nativeLinkStubs := true
+// This is an application with a main method
+scalaJSUseMainModuleInitializer := true
 
-enablePlugins(ScalaNativePlugin)
+// enablePlugins(ScalaNativePlugin)
+enablePlugins(ScalaJSPlugin)
+
+libraryDependencies ++= Seq(
+    "com.lihaoyi" %% "cask" % "0.5.2"
+)

@@ -4,7 +4,7 @@ Mal-ocht-e - Mallachtaí - Curses.
 
 ## What?
 
-A Hello-World level Scala Native project that randomly selects
+A Hello-World level Scala.js project that randomly selects
 a curse in the Irish language, and prints it to the console.
 
 The selection of curses is drawn from

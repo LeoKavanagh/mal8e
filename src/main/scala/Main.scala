@@ -8,32 +8,47 @@ import Mallacht._
 
 object Main {
 
-  def appendPar(targetNode: dom.Node, text: String): Unit = {
+  // def appendPar(targetNode: dom.Node, text: String): Unit = {
+  //   val parNode = document.createElement("p")
+  //   parNode.textContent = text
+  //   targetNode.appendChild(parNode)
+  // }
 
-    val parNode = document.createElement("p")
+  def changePar(targetNode: dom.Node, text: String): Unit = {
+    val parNode = document.getElementById("mallacht")
     parNode.textContent = text
-    targetNode.appendChild(parNode)
   }
 
   def addClickedMessage(): Unit = {
     val mallacht = abair()
-    appendPar(document.body, mallacht)
+    changePar(document.body, mallacht)
   }
 
   def setupUI(): Unit = {
+
     val button = document.createElement("button")
-    button.textContent = "Brúigh an cnaipe"
+    button.textContent = "Brúigh an cnaipe!"
 
     button.addEventListener("click", { (e: dom.MouseEvent) =>
       addClickedMessage()
     })
 
-    document.body.appendChild(button)
+    val p = document.createElement("h2")
+    p.textContent = "Conas taoi inniú?"
+    p.setAttribute("id", "mallacht")
+
+    val centrediv = document.createElement("div")
+    centrediv.setAttribute("id", "mydiv")
+    centrediv.setAttribute("align", "center")
+
+    document.body.appendChild(centrediv)
+    document.getElementById("mydiv").appendChild(button)
+    document.getElementById("mydiv").appendChild(p)
 
   }
 
   def main(args: Array[String]): Unit = {
-    document.addEventListener("DOMContentLoaded", { (e: dom.Event) => 
+    document.addEventListener("DOMContentLoaded", { (e: dom.Event) =>
       setupUI()
     })
   }

@@ -38,3 +38,18 @@ Generate the Javascript file with
 ```
 sbt fullOptJS
 ```
+
+This compiles the Scala code into a minified JavaScript file.
+The Scala code itself places all the various HTML tags on the web page,
+and also randomly selects a curse to display when you press the button.
+
+In and of itself, we can't actually do anything with this file, so we'll load it
+into a HTML file and run it with a really simple ExpressJS web app.
+
+```
+cp target/scala-2.13/mal8e-opt.js express/public/mal8e.opt.js
+node express/app.js
+```
+
+Now go to [http://localhost:3000](http://localhost:3000).
+All going well, you should see a button to press. Bain triail as.
